@@ -1,4 +1,5 @@
 import express from 'express';
+import './databases';
 import cors from 'cors';
 import routes from './routes';
 
@@ -10,3 +11,5 @@ app.use(routes);
 
 
 app.listen(3333, () => console.log('Server started'));
+
+/* teste teste PR */
