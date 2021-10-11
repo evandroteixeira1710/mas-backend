@@ -1,6 +1,13 @@
-import { response, Router } from "express"; 
-
-const routes = Router();
+import { response, Router, request } from "express"; 
+import { ActivyController } from "./controller/ActivyController";
+import { CourseUnitController } from "./controller/CourseUnitController";
+import { UserController } from "./controller/UserController";
+/*
+interface UserRequest{
+    name: string;
+    email: string;
+    password: string;
+}
 
 routes.get('/query', (request, response) => {
     const {consulta} = request.query;
@@ -54,5 +61,18 @@ password
 }
 return response.json(user);
 });    
+*/
+
+const userController = new UserController();
+const activyController = new ActivyController();
+const courseUnitController = new CourseUnitController();
+
+
+
+const routes = Router();
+
+routes.post('/user', userController.create);
+routes.post('/activy', activyController.create);
+routes.post('/courseunit', courseUnitController.create);
 
 export default routes;
