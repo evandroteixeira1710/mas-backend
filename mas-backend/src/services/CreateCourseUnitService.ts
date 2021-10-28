@@ -32,7 +32,7 @@ class CreateCourseUnitService{
       }
 }
 
-
+export {CreateCourseUnitService};
 /*
 
 

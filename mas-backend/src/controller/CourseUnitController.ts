@@ -15,6 +15,18 @@ class CourseUnitController{
 
     }
 
+    async show (request:Request, response:Response){
+        const userId = request.body.user;
+
+        const getAgetCoursesUnits = new GetCourseUnitsService();
+
+        const courseunits = await getAgetCoursesUnits.execute(userId);
+
+        return response.json(courseunits);
+
+
+    }
+
 
 }
 

@@ -30,11 +30,11 @@ export default function authenticated(request:Request, response:Response, next:N
 
     const {sub,role} = verifyToken as Token;
 
-    request.body = {
+    request.body.user = {
         id:sub,
         role:role
     }
 
     return next();
-
+ 
 }
