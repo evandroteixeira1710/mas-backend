@@ -1,10 +1,11 @@
 import {Request, Response} from 'express';
 import { CreateCourseUnitService } from '../services/CreateCourseUnitService';
+import { GetCourseUnitsService } from '../services/GetCourseUnitsService';
 
 
 class CourseUnitController{
     async create(request:Request, response:Response){
-        const courseUnitData = request.body
+        const courseUnitData = request.body;
 
         const createcourseUnit = new CreateCourseUnitService();
         
